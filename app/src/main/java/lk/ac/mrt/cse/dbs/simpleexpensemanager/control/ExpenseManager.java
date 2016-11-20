@@ -57,7 +57,7 @@ public abstract class ExpenseManager implements Serializable {
      * @param amount
      * @throws InvalidAccountException
      */
-    public void updateAccountBalance(String accountNo, int day, int month, int year, ExpenseType expenseType,
+    public void updateAccountBalance(String account_no, int day, int month, int year, ExpenseType expense,
                                      String amount) throws InvalidAccountException {
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
@@ -65,8 +65,8 @@ public abstract class ExpenseManager implements Serializable {
 
         if (!amount.isEmpty()) {
             double amountVal = Double.parseDouble(amount);
-            transactionsHolder.logTransaction(transactionDate, accountNo, expenseType, amountVal);
-            accountsHolder.updateBalance(accountNo, expenseType, amountVal);
+            transactionsHolder.logTransaction(transactionDate, account_no, expense, amountVal);
+            accountsHolder.updateBalance(account_no, expense, amountVal);
         }
     }
 
@@ -87,8 +87,8 @@ public abstract class ExpenseManager implements Serializable {
      * @param accountHolderName
      * @param initialBalance
      */
-    public void addAccount(String accountNo, String bankName, String accountHolderName, double initialBalance) {
-        Account account = new Account(accountNo, bankName, accountHolderName, initialBalance);
+    public void addAccount(String account_no, String bank_name, String account_holder_name, double initialBalance) {
+        Account account = new Account(account_no, bank_name, account_holder_name, initialBalance);
         accountsHolder.addAccount(account);
     }
 
