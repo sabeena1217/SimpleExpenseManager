@@ -8,7 +8,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.db.DatabaseHelper;;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.database.DatabaseManager;
 
 
 public class PersistentAccountDAO implements AccountDAO {
